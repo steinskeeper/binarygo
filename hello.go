@@ -8,8 +8,11 @@ func main() {
 	r.GET("/ping", func(c *gin.Context) {
 
 		c.JSON(200, gin.H{
-			"message": "pongg",
+			"message": "pong",
 		})
 	})
-	r.Run()
+	err := r.Run()
+	if err != nil {
+		return
+	}
 }
